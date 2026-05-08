@@ -47,7 +47,7 @@ const datas = ratings.map((rat) => ({
           <div className="flex justify-around gap-6">
             <div>
               <img
-                className="w-7"
+                className="w-7 mx-auto md:mx-0"
                 src="/src/assets/icon-downloads.png"
                 alt=""
               />
@@ -55,12 +55,12 @@ const datas = ratings.map((rat) => ({
               <h3 className="text-3xl font-bold">{downloads}</h3>
             </div>
             <div>
-              <img className="w-7" src="/src/assets/icon-ratings.png" alt="" />
+              <img className="w-7 mx-auto md:mx-0" src="/src/assets/icon-ratings.png" alt="" />
               <p>Average Ratings</p>
               <h3 className="text-3xl font-bold">{ratingAvg}</h3>
             </div>
             <div>
-              <img className="w-7" src="/src/assets/icon-review.png" alt="" />
+              <img className="w-7 mx-auto md:mx-0" src="/src/assets/icon-review.png" alt="" />
               <p>Total Reviews</p>
               <h3 className="text-3xl font-bold">{reviews}</h3>
             </div>
