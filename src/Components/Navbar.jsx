@@ -3,12 +3,19 @@ import { Link } from "react-router";
 import { FaGithub } from "react-icons/fa";
 
 const Navbar = () => {
-    const links = <>
-
-    <Link className="m-2" to="/">Home</Link>
-    <Link className="m-2" to="/apps">Apps</Link>
-    <Link className="m-2" to="/installation">Installation</Link>
+  const links = (
+    <>
+      <Link className="m-2" to="/">
+        Home
+      </Link>
+      <Link className="m-2" to="/apps">
+        Apps
+      </Link>
+      <Link className="m-2" to="/installation">
+        Installation
+      </Link>
     </>
+  );
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -37,21 +44,23 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-      <Link to="/">
-       <div className="flex justify-around items-center gap-1  ">
-         <img className="w-10 " src="/src/assets/logo.png" alt="" />
-        <p className=" font-semibold text-xl">HERO.IO</p>
-       </div>
-      </Link>
+        <Link to="/">
+          <div className="flex justify-around items-center gap-1  ">
+            <img className="w-10 " src="/src/assets/logo.png" alt="" />
+            <p className=" font-semibold text-xl">HERO.IO</p>
+          </div>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-gradient-to-t from-purple-400 to-purple-700 text-white"><FaGithub />
-Contribute</a>
+       <Link to="https://github.com/nazmulrahat786">
+        <button className="btn bg-gradient-to-t from-purple-400 to-purple-700 text-white">
+          <FaGithub />
+          Contribute
+        </button>
+       </Link>
       </div>
     </div>
   );

@@ -1,5 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import { useLoaderData, useParams } from "react-router";
+
 
 const AppDetails = () => {
   const data = useLoaderData();
@@ -18,7 +28,10 @@ const AppDetails = () => {
     reviews,
     size,
   } = singleApp;
-
+const datas = ratings.map((rat) => ({
+  name: rat.name,
+  count: rat.count,
+}));
   return (
     <div className="bg-gray-100 flex p-16 flex-col gap-3">
       <div className="flex gap-5">
@@ -57,9 +70,19 @@ const AppDetails = () => {
           </button>
         </div>
       </div>
-      <div border-b w-full border-gray-300 ></div>
+      <div border-b w-full border-gray-300></div>
 
-      <div></div>
+      <div>
+        <ResponsiveContainer width="100%" dataKey={datas} height={250}>
+      <BarChart  layout="vertical">
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis type="number" />
+        <YAxis dataKey="name" type="category" />
+        <Tooltip />
+        <Bar dataKey="value" fill="#f97316" />
+      </BarChart>
+    </ResponsiveContainer>
+      </div>
     </div>
   );
 };
