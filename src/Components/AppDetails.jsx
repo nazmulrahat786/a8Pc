@@ -34,7 +34,7 @@ const datas = ratings.map((rat) => ({
 }));
   return (
     <div className="bg-gray-100 flex p-16 flex-col gap-3">
-      <div className="flex gap-5">
+      <div className="flex flex-col items-center text-center md:text-justify md:flex-row gap-5">
         <div>
           <img className="rounded" src={image} alt="" />
         </div>
@@ -65,7 +65,7 @@ const datas = ratings.map((rat) => ({
               <h3 className="text-3xl font-bold">{reviews}</h3>
             </div>
           </div>
-          <button className="btn btn-xs bg-emerald-400 w-52 text-white sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">
+          <button className="btn mx-auto  md:mx-0 bg-emerald-400 w-52 text-white ">
             Install Now ({size} MB)
           </button>
         </div>
