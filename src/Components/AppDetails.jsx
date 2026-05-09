@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useLoaderData, useParams } from "react-router";
+import { addToStoreDB, getStoredBook } from "./localstorage";
 
 const AppDetails = () => {
   const [apdta, setApdta] = useState([]);
@@ -18,6 +19,7 @@ const AppDetails = () => {
 
   const singleApp = data.find((dta) => dta.id === appId);
   const {
+  
     title,
     companyName,
     description,
@@ -29,12 +31,19 @@ const AppDetails = () => {
     size,
   } = singleApp;
 
+
   const datas = ratings.map((rat) => ({
     name: rat.name,
     count: rat.count,
   }));
+  const handleInstall = (id) => {
+    addToStoreDB(appId);
+  };
 
-  console.log(apdta);
+  const addedApps = getStoredBook()
+
+
+  console.log(addedApps);
   return (
     <div className="bg-gray-100 flex p-16 flex-col gap-3">
       <div className="flex flex-col items-center text-center md:text-justify md:flex-row gap-5">
@@ -76,12 +85,17 @@ const AppDetails = () => {
               <h3 className="text-3xl font-bold">{reviews}</h3>
             </div>
           </div>
-          <button className="btn mx-auto  md:mx-0 bg-emerald-400 w-52 text-white ">
+          <button
+            onClick={() => {
+              handleInstall();
+            }}
+            className="btn mx-auto  md:mx-0 bg-emerald-400 w-52 text-white "
+          >
             Install Now ({size} MB)
           </button>
         </div>
       </div>
-      <div border-b w-full border-gray-300></div>
+      {/* <div border-b w-full border-gray-300></div> */}
 
       <div>
         <ResponsiveContainer width="100%" height={250}>
@@ -104,10 +118,8 @@ const AppDetails = () => {
       </div>
 
       <div>
-<h1 className="text-3xl font-bold">Description</h1>
-<p className="text-gray-400 text-justify">{description}</p>
-
-
+        <h1 className="text-3xl font-bold">Description</h1>
+        <p className="text-gray-400 text-justify">{description}</p>
       </div>
     </div>
   );

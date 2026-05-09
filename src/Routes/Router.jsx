@@ -25,7 +25,8 @@ const router = createBrowserRouter([
       }
       ,
       {
-        path:"installation" , Component: Installation
+        path:"installation" , Component: Installation ,
+          loader: ()=>fetch("/public/Data.json")
       }
       ,
       {

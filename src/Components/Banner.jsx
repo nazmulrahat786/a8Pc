@@ -28,7 +28,7 @@ const Banner = () => {
           </button>
         </div>
       </div>
-      <div className="flex max-auto justify-center pt-12">
+      <div className="flex  max-auto justify-center pt-12">
         <img src="/src/assets/hero.png" alt="" />
       </div>
       <div className="h-[400px] md:h-96  bg-gradient-to-r from-purple-700 via-violet-600 to-purple-500 text-center px-16 py-12 md:py-20  flex flex-col justify-around">
