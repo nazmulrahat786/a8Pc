@@ -1,23 +1,28 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { FaGithub } from "react-icons/fa";
 
 const Navbar = () => {
+   const navLinkStyle = ({ isActive }) =>
+    isActive
+      ? "m-2 px-3 py-2 font-semibold rounded-lg  underline  underline-offset-4 text-purple-600 "
+      : "m-2 px-3 py-2 font-semibold rounded-lg hover:bg-base-200";
   const links = (
     <>
-      <Link className="m-2" to="/">
+      <NavLink  className={navLinkStyle} to="/">
         Home
-      </Link>
-      <Link className="m-2" to="/apps">
+      </NavLink>
+      <NavLink className={navLinkStyle} to="/apps">
         Apps
-      </Link>
-      <Link className="m-2" to="/installation">
+      </NavLink>
+  
+      <NavLink className={navLinkStyle} to="/installation">
         Installation
-      </Link>
+      </NavLink>
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar  bg-base-100 shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

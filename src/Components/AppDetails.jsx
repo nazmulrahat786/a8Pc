@@ -10,8 +10,8 @@ import {
 } from "recharts";
 import { useLoaderData, useParams } from "react-router";
 
-
 const AppDetails = () => {
+  const [apdta, setApdta] = useState([]);
   const data = useLoaderData();
   const { id } = useParams();
   const appId = parseInt(id);
@@ -28,10 +28,13 @@ const AppDetails = () => {
     reviews,
     size,
   } = singleApp;
-const datas = ratings.map((rat) => ({
-  name: rat.name,
-  count: rat.count,
-}));
+
+  const datas = ratings.map((rat) => ({
+    name: rat.name,
+    count: rat.count,
+  }));
+
+  console.log(apdta);
   return (
     <div className="bg-gray-100 flex p-16 flex-col gap-3">
       <div className="flex flex-col items-center text-center md:text-justify md:flex-row gap-5">
@@ -55,12 +58,20 @@ const datas = ratings.map((rat) => ({
               <h3 className="text-3xl font-bold">{downloads}</h3>
             </div>
             <div>
-              <img className="w-7 mx-auto md:mx-0" src="/src/assets/icon-ratings.png" alt="" />
+              <img
+                className="w-7 mx-auto md:mx-0"
+                src="/src/assets/icon-ratings.png"
+                alt=""
+              />
               <p>Average Ratings</p>
               <h3 className="text-3xl font-bold">{ratingAvg}</h3>
             </div>
             <div>
-              <img className="w-7 mx-auto md:mx-0" src="/src/assets/icon-review.png" alt="" />
+              <img
+                className="w-7 mx-auto md:mx-0"
+                src="/src/assets/icon-review.png"
+                alt=""
+              />
               <p>Total Reviews</p>
               <h3 className="text-3xl font-bold">{reviews}</h3>
             </div>
@@ -73,15 +84,30 @@ const datas = ratings.map((rat) => ({
       <div border-b w-full border-gray-300></div>
 
       <div>
-        <ResponsiveContainer width="100%" dataKey={datas} height={250}>
-      <BarChart  layout="vertical">
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis type="number" />
-        <YAxis dataKey="name" type="category" />
-        <Tooltip />
-        <Bar dataKey="value" fill="#f97316" />
-      </BarChart>
-    </ResponsiveContainer>
+        <ResponsiveContainer width="100%" height={250}>
+          <BarChart
+            data={datas}
+            layout="vertical"
+            margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+
+            <XAxis type="number" />
+
+            <YAxis dataKey="name" type="category" />
+
+            <Tooltip />
+
+            <Bar dataKey="count" fill="#f97316" barSize={30} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+      <div>
+<h1 className="text-3xl font-bold">Description</h1>
+<p className="text-gray-400">{description}</p>
+
+
       </div>
     </div>
   );

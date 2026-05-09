@@ -32,6 +32,11 @@ const router = createBrowserRouter([
         path:"details/:id" , Component: AppDetails ,
          loader: ()=>fetch("/public/Data.json")
       } ,
+      
+      {
+        path:"apps/details/:id" , Component: AppDetails ,
+         loader: ()=>fetch("/public/Data.json")
+      } ,
       {
         path:"*" , Component: Errorpage
         
