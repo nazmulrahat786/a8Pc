@@ -10,7 +10,7 @@ const getStoredBook = ()=>{
         }
     
 }
-const addToStoreDB = (id)=>{
+const addToStoreDB = (id, setApdta)=>{
 const storeBookData = getStoredBook()
 
 if (storeBookData.includes(id)){
@@ -30,6 +30,7 @@ else{
       icon: "success",
       draggable: true
     });
+    setApdta(true)
 
 }
 
