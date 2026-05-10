@@ -10,7 +10,7 @@ const getStoredBook = ()=>{
         }
     
 }
-const addToStoreDB = (id, setApdta)=>{
+const addToStoreDB = (id)=>{
 const storeBookData = getStoredBook()
 
 if (storeBookData.includes(id)){
@@ -29,10 +29,40 @@ else{
       title: "Installed",
       icon: "success",
       draggable: true
-    });
-    setApdta(true)
+    }).then(()=>{
+        window.location.reload()
+    })
+
 
 }
 
 }
-export {addToStoreDB,getStoredBook}
+const removeToStoreDB = (id) => {
+  const storeBookData = getStoredBook();
+
+  const remainingData = storeBookData.filter(
+    (bookId) => bookId !== id
+  );
+
+  localStorage.setItem("readList", JSON.stringify(remainingData));
+  
+
+ Swal.fire({
+      title: "Uninstalled",
+      icon: "success",
+      draggable: true
+    }
+
+).then(()=>{
+        window.location.reload()
+    })
+
+
+
+
+    
+
+};
+
+
+export {addToStoreDB,getStoredBook,removeToStoreDB}

@@ -5,7 +5,7 @@ import Footer from '../Components/Footer';
 
 const MainPage = () => {
     return (
-        <div className='max-w-[1280px] mx-auto flex flex-col justify-between h-screen'>
+        <div className='max-w-[1280px] mx-auto flex bg-gray-50 flex-col justify-between min-h-screen'>
            <div>
              <Navbar></Navbar>
             <Outlet></Outlet>

@@ -2,8 +2,8 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div>
-      <div className="text-center pt-16">
+    <div className="bg-white">
+      <div className="text-center  pt-16">
         <h1 className="text-5xl mb-2 font-bold ">
           We Build <br /> <span className="text-indigo-500">Productive</span>{" "}
           Apps
