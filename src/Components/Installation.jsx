@@ -9,7 +9,7 @@ const Installation = () => {
 
   useEffect(() => {
     const installApp = getStoredBook();
-
+ 
     const installedApps = data.filter((app) => installApp.includes(app.id));
 
     setSApp(installedApps);
