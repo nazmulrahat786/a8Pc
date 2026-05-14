@@ -13,7 +13,7 @@ const Installation = () => {
     const installedApps = data.filter((app) => installApp.includes(app.id));
 
     setSApp(installedApps);
-  }, [data]);
+  }, [data]); 
 
   console.log(sApp); 
  
