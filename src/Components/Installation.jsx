@@ -17,7 +17,7 @@ const Installation = () => {
 
   console.log(sApp);  
  
-  return (
+  return ( 
     <div  className="flex flex-col  px-3">
      <h1 className="font-bold  text-2xl text-center pt-7 ">Your Installed Apps Apps Found</h1>
      <h1 className=" text-gray-400 text-center  mx-10  ">Explore All Trending Apps on the Market developed by us Apps Found</h1>
