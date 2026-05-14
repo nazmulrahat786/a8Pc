@@ -16,7 +16,7 @@ const Installation = () => {
   }, [data]);
 
   console.log(sApp); 
-
+ 
   return (
     <div  className="flex flex-col  px-3">
      <h1 className="font-bold  text-2xl text-center pt-7 ">Your Installed Apps Apps Found</h1>
