@@ -15,7 +15,7 @@ const Installation = () => {
     setSApp(installedApps);
   }, [data]); 
 
-  console.log(sApp); 
+  console.log(sApp);  
  
   return (
     <div  className="flex flex-col  px-3">
