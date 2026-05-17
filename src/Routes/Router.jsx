@@ -5,7 +5,7 @@ import Apps from "../Components/Apps";
 import Installation from "../Components/Installation";
 import AppDetails from "../Components/AppDetails";
 import Errorpage from "../Components/Errorpage";
-const router = createBrowserRouter([
+const router = createBrowserRouter([   
   {
     path: "/",
     Component: MainPage ,
