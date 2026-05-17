@@ -13,7 +13,7 @@ const router = createBrowserRouter([
       { 
         index:true ,
         loader: ()=>fetch("/public/Data.json")
-
+  
 
         ,
         
