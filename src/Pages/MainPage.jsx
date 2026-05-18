@@ -7,7 +7,7 @@ const MainPage = () => {
     return ( 
         <div className='max-w-[1280px] mx-auto flex bg-gray-50 flex-col justify-between min-h-screen'>
            <div>
-             <Navbar></Navbar>
+             <Navbar></Navbar> 
             <Outlet></Outlet>
            </div>
             <Footer></Footer>
