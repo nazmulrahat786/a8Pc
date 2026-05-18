@@ -11,7 +11,7 @@ const MainPage = () => {
             <Outlet></Outlet>
            </div>
             <Footer></Footer>
-            
+              
         </div>
     );
 };
